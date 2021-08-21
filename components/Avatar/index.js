@@ -1,3 +1,3 @@
-export default function Avatar() {
-	
+export default function Avatar () {
+
 }

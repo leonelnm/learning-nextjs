@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import AppLayout from '../components/AppLayout'
 import Button from '../components/Button'
 import Github from '../components/Icons/Github'
@@ -8,8 +7,7 @@ import { loginWithGithub, onAuthStateChanged } from '../firebase/client'
 
 import style from '../styles/Home.module.scss'
 
-export default function Home() {
-
+export default function Home () {
   const [user, setUser] = useState(undefined)
 
   useEffect(() => {
@@ -18,12 +16,11 @@ export default function Home() {
 
   const handleClick = () => {
     loginWithGithub()
-    .then(setUser)
-    .catch(err => {
-      console.log(err);
-    })
+      .then(setUser)
+      .catch(err => {
+        console.log(err)
+      })
   }
-
 
   return (
     <>
