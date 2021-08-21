@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   reactStrictMode: true,
@@ -8,4 +8,4 @@ module.exports = {
   images: {
     domains: ['avatars.githubusercontent.com']
   }
-}
+};

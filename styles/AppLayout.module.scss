@@ -8,15 +8,13 @@
 
 .boxMain {
   background: #fff;
-  border-radius: 10px;;
+  border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   height: 100%;
   width: 100%;
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     height: 90vh;
-    width: map-get($breakpoints, 'mobile', 'min-width'); 
+    width: map-get($breakpoints, "mobile", "min-width");
   }
 }
-
-

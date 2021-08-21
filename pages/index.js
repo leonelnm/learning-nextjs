@@ -1,26 +1,26 @@
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import AppLayout from '../components/AppLayout'
-import Button from '../components/Button'
-import Github from '../components/Icons/Github'
-import { loginWithGithub, onAuthStateChanged } from '../firebase/client'
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import AppLayout from '../components/AppLayout';
+import Button from '../components/Button';
+import Github from '../components/Icons/Github';
+import { loginWithGithub, onAuthStateChanged } from '../firebase/client';
 
-import style from '../styles/Home.module.scss'
+import style from '../styles/Home.module.scss';
 
 export default function Home () {
-  const [user, setUser] = useState(undefined)
+  const [user, setUser] = useState(undefined);
 
   useEffect(() => {
-    onAuthStateChanged(setUser)
-  }, [])
+    onAuthStateChanged(setUser);
+  }, []);
 
   const handleClick = () => {
     loginWithGithub()
       .then(setUser)
-      .catch(err => {
-        console.log(err)
-      })
-  }
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -35,24 +35,21 @@ export default function Home () {
           <img className={style.logo} src="/akka-logo.svg" alt="logo" />
           <h1 className={style.title}>Midu Devter</h1>
           <div style={{ marginTop: '1rem' }}>
-
-            {
-              user === null &&
+            {user === null && (
               <Button onClick={handleClick}>
                 <Github fill={'#ffffff'} width={24} height={24} />
                 Login with Github
               </Button>
-            }
-            {
-              user && user.avatar &&
+            )}
+            {user && user.avatar && (
               <div>
                 <img src={user.avatar} width="100" alt={user.username} />
                 <strong>{user.username}</strong>
               </div>
-            }
+            )}
           </div>
         </section>
       </AppLayout>
     </>
-  )
+  );
 }

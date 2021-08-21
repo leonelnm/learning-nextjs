@@ -1,4 +1,4 @@
-import style from '../../styles/Buttons.module.scss'
+import style from '../../styles/Buttons.module.scss';
 
 export default function Button ({ children, onClick }) {
   return (
@@ -7,5 +7,5 @@ export default function Button ({ children, onClick }) {
         {children}
       </button>
     </>
-  )
+  );
 }
