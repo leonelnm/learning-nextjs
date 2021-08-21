@@ -23,3 +23,10 @@ yarn add eslint-plugin-react eslint-config-standard eslint eslint-plugin-import 
 yarn add prettier -D
 
 ```
+
+## Configurar precommit con eslint
+
+```bash
+npx mrm@2 lint-staged
+
+```
