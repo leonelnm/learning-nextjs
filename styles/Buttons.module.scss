@@ -1,0 +1,23 @@
+@import 'colors';
+
+.btn{
+	align-items: center;
+	background-color: $color-black;
+	border-radius: 9999px;
+	border: 0;
+	color: $color-white;
+	cursor: pointer;
+	display: flex;
+	font-size: 16px;
+	font-weight: 800;
+	padding: 10px 24px;
+	transition: opacity .3s ease;
+
+	&:hover{
+		opacity: .7;
+	}
+
+	svg{
+		margin-right: 8px;
+	}
+}
